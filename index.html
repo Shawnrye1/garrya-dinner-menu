@@ -351,6 +351,21 @@
           <div class="fixed-course-name">Mascarpone Passion</div>
           <div class="fixed-course-desc">Mascarpone Mousse with Passion Fruit Crème</div>
         </div>
+
+        <!-- Beverage Selection -->
+        <div class="selection-group">
+          <h4 class="course-title">Beverage (Select 1) <span class="required">*</span></h4>
+          <div class="options-grid">
+            <label class="radio-label">
+              <input type="radio" name="may15_beverage" value="Champagne" required>
+              Champagne
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="may15_beverage" value="Non-Alcoholic Faux Fizz Ginger">
+              Non-Alcoholic Faux Fizz Ginger
+            </label>
+          </div>
+        </div>
       </div>
 
       <button type="submit" class="submit-btn" id="submitBtn">Submit Selections</button>
@@ -379,7 +394,8 @@
         may11_appetizer: document.querySelector('input[name="may11_appetizer"]:checked')?.value,
         may11_main: document.querySelector('input[name="may11_main"]:checked')?.value,
         may15_appetizer: document.querySelector('input[name="may15_appetizer"]:checked')?.value,
-        may15_main: document.querySelector('input[name="may15_main"]:checked')?.value
+        may15_main: document.querySelector('input[name="may15_main"]:checked')?.value,
+        may15_beverage: document.querySelector('input[name="may15_beverage"]:checked')?.value
       };
 
       try {
