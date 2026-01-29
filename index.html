@@ -140,12 +140,27 @@
     .fixed-course {
       font-size: 14px;
       color: #666;
-      padding: 8px 0;
-      border-bottom: 1px dotted #ddd;
+      padding: 12px 15px;
+      margin: 15px 0;
+      background: #fff;
+      border-radius: 6px;
+      border-left: 3px solid #8b4513;
     }
-    .course-label {
+    .fixed-course-title {
       font-weight: bold;
       color: #8b4513;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .fixed-course-name {
+      color: #333;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .fixed-course-desc {
+      font-size: 12px;
+      color: #999;
+      font-style: italic;
     }
     .submit-btn {
       width: 100%;
@@ -186,6 +201,7 @@
       <input type="hidden" name="_subject" value="New Dinner Menu Selection">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_autoresponse" value="Thank you for submitting your dinner selections for the GARRYA Course Dinner! Your choices have been received. We look forward to seeing you!">
 
       <!-- Attendee Information -->
       <div class="section">
@@ -232,26 +248,18 @@
           </div>
         </div>
 
-        <!-- Soup -->
-        <div class="selection-group">
-          <h4 class="course-title">Soup <span class="required">*</span></h4>
-          <p class="course-description">Hot & Sour - Dried Wood Ear Mushroom, Scallop, Ginger, Tofu, and Enoki Mushroom</p>
-          <div class="options-grid">
-            <label class="radio-label">
-              <input type="radio" name="may11_soup" value="Hot & Sour Soup" required>
-              Yes, I'll have the soup
-            </label>
-            <label class="radio-label">
-              <input type="radio" name="may11_soup" value="No Soup">
-              No soup
-            </label>
-          </div>
+        <!-- Soup (Fixed) -->
+        <div class="fixed-course">
+          <div class="fixed-course-title">Soup (included)</div>
+          <div class="fixed-course-name">Hot & Sour</div>
+          <div class="fixed-course-desc">Dried Wood Ear Mushroom, Scallop, Ginger, Tofu, and Enoki Mushroom</div>
         </div>
 
-        <!-- Granita -->
+        <!-- Granita (Fixed) -->
         <div class="fixed-course">
-          <span class="course-label">Granita (included):</span> Lemongrass Infusion and Red Chili Syrup<br>
-          <em style="font-size: 12px; color: #999;">Sugar Syrup, Lemon Juice</em>
+          <div class="fixed-course-title">Granita (included)</div>
+          <div class="fixed-course-name">Lemongrass Infusion and Red Chili Syrup</div>
+          <div class="fixed-course-desc">Sugar Syrup, Lemon Juice</div>
         </div>
 
         <!-- Main Course -->
@@ -275,20 +283,11 @@
           </div>
         </div>
 
-        <!-- Dessert -->
-        <div class="selection-group">
-          <h4 class="course-title">Dessert <span class="required">*</span></h4>
-          <p class="course-description">Asian Trilogy - Chocolate Banana Spring Roll, Coconut Crème Brûlé, and Green Tea Cheese Cake</p>
-          <div class="options-grid">
-            <label class="radio-label">
-              <input type="radio" name="may11_dessert" value="Asian Trilogy" required>
-              Yes, I'll have dessert
-            </label>
-            <label class="radio-label">
-              <input type="radio" name="may11_dessert" value="No Dessert">
-              No dessert
-            </label>
-          </div>
+        <!-- Dessert (Fixed) -->
+        <div class="fixed-course">
+          <div class="fixed-course-title">Dessert (included)</div>
+          <div class="fixed-course-name">Asian Trilogy</div>
+          <div class="fixed-course-desc">Chocolate Banana Spring Roll, Coconut Crème Brûlé, and Green Tea Cheese Cake</div>
         </div>
       </div>
 
@@ -317,27 +316,18 @@
           </div>
         </div>
 
-        <!-- Soup -->
-        <div class="selection-group">
-          <h4 class="course-title">Soup <span class="required">*</span></h4>
-          <p class="course-description">Roasted Pepper and Tomato Jelly with Goat Cheese Latte Foam<br>
-          <em>Red Bell Pepper, Tomato, Thyme, Olive Oil, Goat Cheese, Garlic, Honey, and Basil Leaves</em></p>
-          <div class="options-grid">
-            <label class="radio-label">
-              <input type="radio" name="may15_soup" value="Roasted Pepper & Tomato Jelly Soup" required>
-              Yes, I'll have the soup
-            </label>
-            <label class="radio-label">
-              <input type="radio" name="may15_soup" value="No Soup">
-              No soup
-            </label>
-          </div>
+        <!-- Soup (Fixed) -->
+        <div class="fixed-course">
+          <div class="fixed-course-title">Soup (included)</div>
+          <div class="fixed-course-name">Roasted Pepper and Tomato Jelly with Goat Cheese Latte Foam</div>
+          <div class="fixed-course-desc">Red Bell Pepper, Tomato, Thyme, Olive Oil, Goat Cheese, Garlic, Honey, and Basil Leaves</div>
         </div>
 
-        <!-- Granita -->
+        <!-- Granita (Fixed) -->
         <div class="fixed-course">
-          <span class="course-label">Granita (included):</span> Fresh Ginger and Tarragon<br>
-          <em style="font-size: 12px; color: #999;">Vodka, Green Apple Juice, Lime Juice</em>
+          <div class="fixed-course-title">Granita (included)</div>
+          <div class="fixed-course-name">Fresh Ginger and Tarragon</div>
+          <div class="fixed-course-desc">Vodka, Green Apple Juice, Lime Juice</div>
         </div>
 
         <!-- Main Course -->
@@ -360,20 +350,11 @@
           </div>
         </div>
 
-        <!-- Dessert -->
-        <div class="selection-group">
-          <h4 class="course-title">Dessert <span class="required">*</span></h4>
-          <p class="course-description">Mascarpone Passion - Mascarpone Mousse with Passion Fruit Crème</p>
-          <div class="options-grid">
-            <label class="radio-label">
-              <input type="radio" name="may15_dessert" value="Mascarpone Passion" required>
-              Yes, I'll have dessert
-            </label>
-            <label class="radio-label">
-              <input type="radio" name="may15_dessert" value="No Dessert">
-              No dessert
-            </label>
-          </div>
+        <!-- Dessert (Fixed) -->
+        <div class="fixed-course">
+          <div class="fixed-course-title">Dessert (included)</div>
+          <div class="fixed-course-name">Mascarpone Passion</div>
+          <div class="fixed-course-desc">Mascarpone Mousse with Passion Fruit Crème</div>
         </div>
       </div>
 
