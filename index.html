@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GARRYA Course Dinner Menu</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Georgia, serif;
+      background-color: #f5f0e8;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 40px;
+    }
+    .header {
+      text-align: center;
+      border-bottom: 2px solid #8b4513;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+    .logo {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 32px;
+      color: #8b4513;
+      margin: 0;
+      letter-spacing: 4px;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0 15px;
+      letter-spacing: 2px;
+    }
+    .menu-title {
+      font-size: 20px;
+      color: #333;
+      margin: 15px 0 0;
+      font-weight: normal;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .section-title {
+      font-size: 18px;
+      color: #8b4513;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .input-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .menu-section {
+      background-color: #faf8f5;
+      border-radius: 8px;
+      padding: 25px;
+      margin-bottom: 25px;
+      border: 1px solid #e0d5c5;
+    }
+    .date-title {
+      font-size: 20px;
+      color: #8b4513;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .selection-group {
+      margin: 25px 0;
+      padding: 15px;
+      background: #fff;
+      border-radius: 6px;
+    }
+    .course-title {
+      font-size: 16px;
+      color: #333;
+      margin: 0 0 5px;
+    }
+    .course-description {
+      font-size: 13px;
+      color: #888;
+      margin: 0 0 15px;
+      font-style: italic;
+    }
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .radio-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      transition: all 0.2s ease;
+    }
+    .radio-label:hover {
+      border-color: #8b4513;
+      background: #faf8f5;
+    }
+    input[type="radio"] {
+      margin-right: 12px;
+      accent-color: #8b4513;
+    }
+    .fixed-course {
+      font-size: 14px;
+      color: #666;
+      padding: 8px 0;
+      border-bottom: 1px dotted #ddd;
+    }
+    .course-label {
+      font-weight: bold;
+      color: #8b4513;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      font-size: 18px;
+      background-color: #8b4513;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      letter-spacing: 1px;
+      transition: background-color 0.2s ease;
+    }
+    .submit-btn:hover {
+      background-color: #6d360f;
+    }
+    .submit-btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .required {
+      color: #c00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">🍽️</div>
+      <h1>GARRYA</h1>
+      <p class="subtitle">Tongai Bay Samui</p>
+      <h2 class="menu-title">Course Dinner Menu</h2>
+    </div>
+
+    <form id="dinnerForm" action="https://formsubmit.co/Alexandra.bruin@gmail.com" method="POST">
+      <!-- FormSubmit configuration -->
+      <input type="hidden" name="_subject" value="New Dinner Menu Selection">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- Attendee Information -->
+      <div class="section">
+        <h3 class="section-title">Attendee Information</h3>
+
+        <div class="input-group">
+          <label>Full Name <span class="required">*</span></label>
+          <input type="text" name="name" required placeholder="Enter your full name">
+        </div>
+
+        <div class="input-group">
+          <label>Email Address <span class="required">*</span></label>
+          <input type="email" name="email" required placeholder="Enter your email">
+        </div>
+
+        <div class="input-group">
+          <label>Dietary Restrictions / Allergies</label>
+          <textarea name="dietary_notes" rows="3" placeholder="Please list any food allergies or dietary restrictions..."></textarea>
+        </div>
+      </div>
+
+      <!-- May 11th Menu -->
+      <div class="menu-section">
+        <h3 class="date-title">Dinner Menu - May 11th</h3>
+
+        <!-- Appetizer -->
+        <div class="selection-group">
+          <h4 class="course-title">Appetizer (Select 1) <span class="required">*</span></h4>
+          <p class="course-description">Seared and Served with Crunchy Tomato and Thai Green Mango Salsa<br>
+          <em>Fresh Tomato, Green Mango, Chili, Coriander, Shallot, Cashew Nut, and Lime Juice</em></p>
+          <div class="options-grid">
+            <label class="radio-label">
+              <input type="radio" name="may11_appetizer" value="Scallop" required>
+              Scallop
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="may11_appetizer" value="Beef">
+              Beef
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="may11_appetizer" value="Asparagus (Vegetarian)">
+              Asparagus (V)
+            </label>
+          </div>
+        </div>
+
+        <!-- Soup -->
+        <div class="selection-group">
+          <h4 class="course-title">Soup <span class="required">*</span></h4>
+          <p class="course-description">Hot & Sour - Dried Wood Ear Mushroom, Scallop, Ginger, Tofu, and Enoki Mushroom</p>
+          <div class="options-grid">
+            <label class="radio-label">
+              <input type="radio" name="may11_soup" value="Hot & Sour Soup" required>
+              Yes, I'll have the soup
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="may11_soup" value="No Soup">
+              No soup
+            </label>
+          </div>
+        </div>
+
+        <!-- Granita -->
+        <div class="fixed-course">
+          <span class="course-label">Granita (included):</span> Lemongrass Infusion and Red Chili Syrup<br>
+          <em style="font-size: 12px; color: #999;">Sugar Syrup, Lemon Juice</em>
+        </div>
+
+        <!-- Main Course -->
+        <div class="selection-group">
+          <h4 class="course-title">Main Course (Select 1) <span class="required">*</span></h4>
+          <p class="course-description">Pan Seared and Served with Black Rice and Asian Spicy Tomato Sauce<br>
+          <em>Long Bean, Asparagus, Tomato, Garlic, Ginger, and Chili</em></p>
+          <div class="options-grid">
+            <label class="radio-label">
+              <input type="radio" name="may11_main" value="Salmon Steak" required>
+              Salmon Steak
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="may11_main" value="Chicken Breast">
+              Chicken Breast
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="may11_main" value="Beetroot Steak (Vegetarian)">
+              Beetroot Steak (V)
+            </label>
+          </div>
+        </div>
+
+        <!-- Dessert -->
+        <div class="selection-group">
+          <h4 class="course-title">Dessert <span class="required">*</span></h4>
+          <p class="course-description">Asian Trilogy - Chocolate Banana Spring Roll, Coconut Crème Brûlé, and Green Tea Cheese Cake</p>
+          <div class="options-grid">
+            <label class="radio-label">
+              <input type="radio" name="may11_dessert" value="Asian Trilogy" required>
+              Yes, I'll have dessert
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="may11_dessert" value="No Dessert">
+              No dessert
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- May 15th Menu -->
+      <div class="menu-section">
+        <h3 class="date-title">Dinner Menu - May 15th</h3>
+
+        <!-- Appetizer -->
+        <div class="selection-group">
+          <h4 class="course-title">Appetizer (Select 1) <span class="required">*</span></h4>
+          <p class="course-description">With Curry Coconut Foam<br>
+          <em>With Japanese Edamame, Avocado, Lemon Zest, Coriander, Tabasco, Olive Oil, Salt, and Pepper</em></p>
+          <div class="options-grid">
+            <label class="radio-label">
+              <input type="radio" name="may15_appetizer" value="Black Crab" required>
+              Black Crab
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="may15_appetizer" value="Chicken">
+              Chicken
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="may15_appetizer" value="Potato (Vegetarian)">
+              Potato (V)
+            </label>
+          </div>
+        </div>
+
+        <!-- Soup -->
+        <div class="selection-group">
+          <h4 class="course-title">Soup <span class="required">*</span></h4>
+          <p class="course-description">Roasted Pepper and Tomato Jelly with Goat Cheese Latte Foam<br>
+          <em>Red Bell Pepper, Tomato, Thyme, Olive Oil, Goat Cheese, Garlic, Honey, and Basil Leaves</em></p>
+          <div class="options-grid">
+            <label class="radio-label">
+              <input type="radio" name="may15_soup" value="Roasted Pepper & Tomato Jelly Soup" required>
+              Yes, I'll have the soup
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="may15_soup" value="No Soup">
+              No soup
+            </label>
+          </div>
+        </div>
+
+        <!-- Granita -->
+        <div class="fixed-course">
+          <span class="course-label">Granita (included):</span> Fresh Ginger and Tarragon<br>
+          <em style="font-size: 12px; color: #999;">Vodka, Green Apple Juice, Lime Juice</em>
+        </div>
+
+        <!-- Main Course -->
+        <div class="selection-group">
+          <h4 class="course-title">Main Course (Select 1) <span class="required">*</span></h4>
+          <p class="course-description">Facon Renaissance with Sweet Potato Mash, Glazed Fine Carrot, and Demi-Glace Port Wine Sauce</p>
+          <div class="options-grid">
+            <label class="radio-label">
+              <input type="radio" name="may15_main" value="Beef Tenderloin" required>
+              Beef Tenderloin
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="may15_main" value="Fish Fillet">
+              Fish Fillet
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="may15_main" value="Aubergine Steak (Vegetarian)">
+              Aubergine Steak (V)
+            </label>
+          </div>
+        </div>
+
+        <!-- Dessert -->
+        <div class="selection-group">
+          <h4 class="course-title">Dessert <span class="required">*</span></h4>
+          <p class="course-description">Mascarpone Passion - Mascarpone Mousse with Passion Fruit Crème</p>
+          <div class="options-grid">
+            <label class="radio-label">
+              <input type="radio" name="may15_dessert" value="Mascarpone Passion" required>
+              Yes, I'll have dessert
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="may15_dessert" value="No Dessert">
+              No dessert
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Selections</button>
+    </form>
+  </div>
+</body>
+</html>
