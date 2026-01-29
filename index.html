@@ -196,12 +196,7 @@
       <h2 class="menu-title">Course Dinner Menu</h2>
     </div>
 
-    <form id="dinnerForm" action="https://formsubmit.co/Alexandra.bruin@gmail.com" method="POST">
-      <!-- FormSubmit configuration -->
-      <input type="hidden" name="_subject" value="New Dinner Menu Selection">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_autoresponse" value="Thank you for submitting your dinner selections for the GARRYA Course Dinner! Your choices have been received. We look forward to seeing you!">
+    <form id="dinnerForm">
 
       <!-- Attendee Information -->
       <div class="section">
@@ -358,8 +353,54 @@
         </div>
       </div>
 
-      <button type="submit" class="submit-btn">Submit Selections</button>
+      <button type="submit" class="submit-btn" id="submitBtn">Submit Selections</button>
     </form>
+
+    <div id="successMessage" style="display: none; text-align: center; padding: 40px;">
+      <div style="font-size: 60px; margin-bottom: 20px;">✓</div>
+      <h2 style="color: #8b4513; margin-bottom: 15px;">Thank You!</h2>
+      <p style="color: #666; font-size: 16px;">Your dinner selections have been submitted.</p>
+      <p style="color: #666; font-size: 14px;">A confirmation email with your selections has been sent to your email address.</p>
+    </div>
   </div>
+
+  <script>
+    document.getElementById('dinnerForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+
+      const formData = {
+        name: document.querySelector('input[name="name"]').value,
+        email: document.querySelector('input[name="email"]').value,
+        dietary_notes: document.querySelector('textarea[name="dietary_notes"]').value,
+        may11_appetizer: document.querySelector('input[name="may11_appetizer"]:checked')?.value,
+        may11_main: document.querySelector('input[name="may11_main"]:checked')?.value,
+        may15_appetizer: document.querySelector('input[name="may15_appetizer"]:checked')?.value,
+        may15_main: document.querySelector('input[name="may15_main"]:checked')?.value
+      };
+
+      try {
+        await fetch('https://script.google.com/macros/s/AKfycbxaVUqwt24nvbnFHBKvVbQrrkGMpTyyB_abNVbPjxo738GQF3XfHbFAxhj1X68SAbut/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        });
+
+        document.getElementById('dinnerForm').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+
+      } catch (error) {
+        alert('There was an error submitting. Please try again.');
+        btn.disabled = false;
+        btn.textContent = 'Submit Selections';
+      }
+    });
+  </script>
 </body>
 </html>
